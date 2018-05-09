@@ -13,7 +13,7 @@
 <style >
   h1 {
     text-align: center;
-    color:white; 
+    color: #000000; 
 
   }
 
@@ -41,9 +41,14 @@ input {
 
 h3{
       font-size: 400%;
-      color: #7FFFD4;
+      color: #23635A;
       transform: translate(10%,0);
 
+}
+
+body{
+
+  margin-left: 300px;
 }
 
 
@@ -53,22 +58,26 @@ h3{
 <body>
   
 
-<div class="container">
+   
+
+<div class="card" style="width:900px" >
   
  
   <h1 class="display-2">Shaastra </h1>
-  </div>
+  
 
-  <h3>Create a new account</h3>
+ <div class="card-header">      <h3>Create a new account</h3> </div>
+ <div class="card-body">
 
 <form>
   <br><br>
-
+<div class="rows">
 <p id="form">First Name:<p>
 <input  type="text" ng-model="fname" placeholder="Enter your  first name here..." required="">
 
 <p id="form">Last Name:<p>
 <input  type="text" ng-model="lname" placeholder="Enter your last name here...." required="">
+</p>  </div>
 <p id="form">Shaastra ID:<p>
 <input type="text" ng-model="shaastraid" placeholder="Enter your ID number here..."  required="">
 <p id="form">Phone number:<p>
@@ -76,10 +85,12 @@ h3{
 <p id="form">Password:<p>
 <input  type="text" ng-model="Password" placeholder="Enter your password here..."  required="">
 
+<p id="form">Confirm Password:<p>
+<input  type="text" ng-model="Password1" placeholder="Enter your password here..."  required="">
 
 
 </form>
-
-
+</div>
+</div>
 </body>
 </html>
