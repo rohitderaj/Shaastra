@@ -19,8 +19,9 @@
 
   form {
     text-align: left;
-    size: 3em;
+    font-size: 150%;
     color: pink;
+    transform: translate(15%, 0%);
 
   }
 
@@ -28,14 +29,21 @@
     background-color: black;
   }
 
-hell {
-    width: 30%;
+input {
+    width: 60%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+}
+
+h3{
+      font-size: 400%;
+      color: #7FFFD4;
+      transform: translate(10%,0);
+
 }
 
 
@@ -51,11 +59,22 @@ hell {
   <h1 class="display-2">Shaastra </h1>
   </div>
 
+  <h3>Create a new account</h3>
+
 <form>
   <br><br>
 
 <p id="form">First Name:<p>
-<input class="hell" type="text" ng-model="fname" placeholder="Enter your name here">
+<input  type="text" ng-model="fname" placeholder="Enter your  first name here..." required="">
+
+<p id="form">Last Name:<p>
+<input  type="text" ng-model="lname" placeholder="Enter your last name here...." required="">
+<p id="form">Shaastra ID:<p>
+<input type="text" ng-model="shaastraid" placeholder="Enter your ID number here..."  required="">
+<p id="form">Phone number:<p>
+<input  type="text" ng-model="phone number" placeholder="Enter your mobile number here..."  required="">
+<p id="form">Password:<p>
+<input  type="text" ng-model="Password" placeholder="Enter your password here..."  required="">
 
 
 
