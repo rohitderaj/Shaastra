@@ -14,13 +14,14 @@
   h1 {
     text-align: center;
     color: #000000; 
+    font-family: Prociono;
 
   }
 
   form {
     text-align: left;
     font-size: 150%;
-    color: pink;
+    color: violet;
     
 
   }
@@ -39,10 +40,9 @@ input {
     box-sizing: border-box;
 }
 
-h3{
-      font-size: 400%;
+h4{
       color: #23635A;
-      transform: translate(10%,0);
+      
 
 
 }
@@ -69,7 +69,7 @@ body{
   <h1 class="display-2">Shaastra </h1>
   
 
- <div class="card-header">      <h3>Create a new account</h3> </div>
+ <div class="card-header">      <h4 class="display-3">Create a new account</h4> </div>
  <div class="card-body">
 
 <form>
@@ -91,13 +91,32 @@ body{
 <p id="form">Confirm Password:<p>
 <input  type="text" ng-model="Password1" placeholder="Enter your password here..."  required="">
 
-<p id="form">state:<p>
-<input  type="se" ng-model="Password1" placeholder="Enter your password here..."  required="">
-
-
+<p id="form">State:<p>
+<div ng-app="myApp" ng-controller="myCtrl">
+ 
+    
+     <select ng-model="selstates" ng-options=" x for x in states">
+</select>
+ 
+ 
+</div>
 
 </form>
+<script>
+  
+  var app = angular.module('myApp', []);
+  app.controller('myCtrl', function($scope) {
+      $scope.states = ["Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu & Kashmir","Jharkhand","Karnataka","Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttarakhand","Uttar Pradesh","West Bengal"];
+
+
+  });
+  </script>
+
+
+
 </div>
 </div>
+
+
 </body>
 </html>
