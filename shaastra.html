@@ -72,7 +72,7 @@ body{
 </style>
 
 </head>
-<body>
+<body >
   
 
    
@@ -90,7 +90,7 @@ body{
   <br><br>
 <div class="rows">
 <p id="form">First Name:<p>
-<input  type="text" ng-model="fname" placeholder="Enter your  first name here..." ng-required=true>
+<input  type="text" ng-model="fname" placeholder="Enter your  first name here..." ng-blur="check();" ng-required=true>
 
 <p id="form">Last Name:<p>
 <input  type="text" ng-model="lname" placeholder="Enter your last name here...." ng-required=true>
@@ -100,10 +100,10 @@ body{
 <p id="form">Phone number:<p>
 <input  type="number" ng-model="phone number" placeholder="Enter your mobile number here..." ng-required=true>
 <p id="form">Password:<p>
-<input  type="text" ng-model="Password" placeholder="Enter your password here..." ng-required=true>
+<input  type="password" ng-model="Password" placeholder="Enter your password here..." ng-required=true>
 
 <p id="form">Confirm Password:<p>
-<input  type="text" ng-model="Password1" placeholder="Enter your password here..."  ng-required=true>
+<input  type="password" ng-model="Password1" placeholder="Enter your password here..."  ng-required=true>
 
 <p id="form">State:<p>
 <div ng-app="myApp" ng-controller="myCtrl">
@@ -130,7 +130,14 @@ body{
   });
   </script>
 
+<script type="text/javascript">
+function check()
+{
+  if(document.getElementById(fname)==null)
+    window.alert("First name cannot be empty");
+} 
 
+</script>>
 
 </div>
 </div>
