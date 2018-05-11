@@ -26,7 +26,7 @@
 
   }
 
-  body {
+  body{
     background-color: black;
   }
 
@@ -53,7 +53,21 @@ body{
   margin-top: 50px;
   margin-bottom: 70px;
 }
+.button5 {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+    width: 260px;
+    transform: translate(100%,0);
+}
 
+.button5:hover {
+    background-color: pink;
+    color: white;
+    width: 260px;
+    transform: translate(100%,0);
+     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
 
 </style>
 
@@ -76,20 +90,20 @@ body{
   <br><br>
 <div class="rows">
 <p id="form">First Name:<p>
-<input  type="text" ng-model="fname" placeholder="Enter your  first name here..." required="">
+<input  type="text" ng-model="fname" placeholder="Enter your  first name here..." ng-required=true>
 
 <p id="form">Last Name:<p>
-<input  type="text" ng-model="lname" placeholder="Enter your last name here...." required="">
+<input  type="text" ng-model="lname" placeholder="Enter your last name here...." ng-required=true>
 </p>  </div>
 <p id="form">Shaastra ID:<p>
-<input type="text" ng-model="shaastraid" placeholder="Enter your ID number here..."  required="">
+<input type="text" ng-model="shaastraid" placeholder="Enter your ID number here..."  ng-required=true>
 <p id="form">Phone number:<p>
-<input  type="text" ng-model="phone number" placeholder="Enter your mobile number here..."  required="">
+<input  type="number" ng-model="phone number" placeholder="Enter your mobile number here..." ng-required=true>
 <p id="form">Password:<p>
-<input  type="text" ng-model="Password" placeholder="Enter your password here..."  required="">
+<input  type="text" ng-model="Password" placeholder="Enter your password here..." ng-required=true>
 
 <p id="form">Confirm Password:<p>
-<input  type="text" ng-model="Password1" placeholder="Enter your password here..."  required="">
+<input  type="text" ng-model="Password1" placeholder="Enter your password here..."  ng-required=true>
 
 <p id="form">State:<p>
 <div ng-app="myApp" ng-controller="myCtrl">
@@ -100,6 +114,10 @@ body{
  
  
 </div>
+<p id="form">Email:<p>
+<input  type="Email" ng-model="emailid" placeholder="Enter your emailid here..."  ng-required=true><br><br>
+<button class="button button5">Create account</button>
+
 
 </form>
 <script>
