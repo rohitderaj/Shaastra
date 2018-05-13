@@ -46,6 +46,10 @@ h4{
 
 
 }
+#demo
+{
+	color: red;
+}
 
 body{
 
@@ -71,20 +75,19 @@ body{
 
 </style>
 
+
+
 <script>
-	
-	function check()
-	{
-		var str=document.getElementById("fname");
+	var id1,id2;
+function check() {
+    var inpObj = document.getElementById("fname");
+    if (!inpObj.checkValidity()) {
+        document.getElementById("demo").innerHTML = inpObj.validationMessage;
+    } 
+    
 
-		 if( (str.length===0 )
-		alert("Please fill the details");
+}
 
-	    
-	   return true;
-
-	}
-  
   var app = angular.module('myApp', []);
   app.controller('myCtrl', function($scope) {
       $scope.states = ["Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu & Kashmir","Jharkhand","Karnataka","Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttarakhand","Uttar Pradesh","West Bengal"];
@@ -101,7 +104,7 @@ body{
 </head>
 
 
-<body>
+<body  >
   
 
  <div class="card" style="width:900px" >
@@ -119,9 +122,10 @@ body{
 
   <p id="form">First Name:<p>
   <input  type="text" id ="fname" placeholder="Enter your  first name here... " onblur="check()" required>
+  <p id="demo"> </p>
 
   <p id="form">Last Name:<p>
-  <input  type="text" ng-model="lname" placeholder="Enter your last name here...." ng-required=true>
+  <input  type="text" id="lname" placeholder="Enter your last name here...." onblur="check()" required>
   </p> 
   <p id="form">Shaastra ID:<p>
   <input type="text" ng-model="shaastraid" placeholder="Enter your ID number here..."  ng-required=true>
@@ -134,10 +138,10 @@ body{
   <input  type="password" ng-model="Password1" placeholder="Enter your password here..."  ng-required=true>
 
   <p id="form">State:<p>
-  <div  ng-app="myApp" ng-controller="myCtrl">
+  <div  ng-app="myApp"  ng-controller="myCtrl">
  
     
-<select ng-model="selstates" ng-options=" x for x in states">
+<select  ng-model="selstates" ng-options=" x for x in states">
 </select>
  
  </div>
