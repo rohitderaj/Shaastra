@@ -24,25 +24,32 @@ $scope.cpass="";
 $scope.passd="";
 $scope.passl="";
 $scope.lenght="";
+$scope.x=0;
+$scope.y=0;
 $scope.checkpassword=function()
 {
   if($scope.pass!=$scope.cpass)
     
-$scope.passd="PASSWORDS DON'T MATCH";
-else
-$scope.passd="";
+           {
+	       $scope.passd="PASSWORDS DON'T MATCH";
+           $scope.x=1;                                }
+     else
+           {$scope.passd="";
+           $scope.x=0; }
 }
+
 $scope.passlen=function()
 {
 	 $scope.length = $scope.pass.length;
 	 if($scope.length<6)
-	 $scope.passl="PASSWORD MUST HAVE MORE THAN 5 CHARACTERS";
+	 {$scope.passl="PASSWORD MUST HAVE MORE THAN 5 CHARACTERS";
+	$scope.y=1;  }
 	 else
-	 $scope.passl="";	
-}
+	 {$scope.passl="";
+	  $scope.y=0;	
+                    }   }
 
-
-  });
+});
   </script>
 
 
@@ -97,6 +104,15 @@ background-color: black;
     width: 260px;
     transform: translate(100%,0);
      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+ }
+.button5:disabled{
+      
+      color: white;   
+      background-color:red;
+      opacity: 0.2;
+      cursor: not-allowed;  
+
+    
 }
 #ll
 {
@@ -187,7 +203,7 @@ input.form-control
 <br>
 <br>
 
-<button class="button button5">Create account</button>
+<button  ng-disabled="myForm.myName.$invalid || myForm.lname.$invalid||  myForm.sid.$invalid || myForm.email.$invalid|| myForm.pno.$invalid || x==1||y==1 " class="button button5" >Create account</button>
 </form>
 </div> <!--card body end -->
 </div> <!-- card end-->
