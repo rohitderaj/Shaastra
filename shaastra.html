@@ -15,10 +15,31 @@
 
 <script>
 	
+var app = angular.module("myApp", []);
+app.controller('myCtrl', function($scope) {
+$scope.states = ["Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu & Kashmir","Jharkhand","Karnataka","Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttarakhand","Uttar Pradesh","West Bengal"];
 
-  var app = angular.module("myApp", []);
-  app.controller('myCtrl', function($scope) {
-      $scope.states = ["Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu & Kashmir","Jharkhand","Karnataka","Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttarakhand","Uttar Pradesh","West Bengal"];
+$scope.pass="";
+$scope.cpass="";
+$scope.passd="";
+$scope.passl="";
+$scope.lenght="";
+$scope.checkpassword=function()
+{
+  if($scope.pass!=$scope.cpass)
+    
+$scope.passd="PASSWORDS DON'T MATCH";
+else
+$scope.passd="";
+}
+$scope.passlen=function()
+{
+	 $scope.length = $scope.pass.length;
+	 if($scope.length<6)
+	 $scope.passl="PASSWORD MUST HAVE MORE THAN 5 CHARACTERS";
+	 else
+	 $scope.passl="";	
+}
 
 
   });
@@ -47,6 +68,10 @@ h4{
 
 
 }
+#pk
+{
+	font-size: 175%;
+}
 #demo
 {
 	color: red;
@@ -67,7 +92,7 @@ background-color: black;
 }
 
 .button5:hover {
-    background-color: pink;
+    background-color: lightblue;
     color: white;
     width: 260px;
     transform: translate(100%,0);
@@ -76,6 +101,16 @@ background-color: black;
 #ll
 {
 	color: red;
+}
+#err{
+	color: red;
+	font-size: 150%;
+}
+input.form-control
+{
+	width:60%;
+	
+	border-color: lightblue;
 }
 
 </style>
@@ -100,37 +135,54 @@ background-color: black;
 
 <form name="myForm"> 
 	
-
+<br>
+<span class="form-group has-float-label">
+  <input class="form-control" id="fname" type="text" ng-model="myName" name="myName"placeholder="Enter firstname"required>
+  <label for="fname">First Name</label> <br>
+  <p id="err" ng-show="myForm.myName.$touched && myForm.myName.$invalid">The name is required.</p>
+</span>
 <br>
 
- <span class="form-group has-float-label">
-  <input class="form-control" id="fname" type="text" placeholder="Enter firstname">
-  <label for="fname">First Name</label> <br>
-</span>
 <span class="form-group has-float-label">
-  <input class="form-control" id="lname" type="text" placeholder="Enter lastname"/>
+  <input class="form-control" id="lname" type="text" ng-model="lname" name="lname" placeholder="Enter Lastname"required>
   <label for="lname">Last Name</label><br>
+  <p id="err" ng-show="myForm.lname.$touched && myForm.lname.$invalid">The name is required.</p></span>
+<br>
+
+  <span class="form-group has-float-label">
+  <input class="form-control" id="sid" type="text" ng-model="sid" name="sid" placeholder="Enter ShaastraID" required>
+  <label for="sid">Shaastra ID</label><br>
+  <p id="err" ng-show="myForm.sid.$touched && myForm.sid.$invalid">The Shaastra ID is required.</p>
+<br>
 </span>
+
 <span class="form-group has-float-label">
-  <input class="form-control" id="email" type="email" placeholder="Enter emailID "/>
+  <input class="form-control" id="email" type="email" name="email" ng-model="email"placeholder="Enter EmailID "/>
   <label for="email">Email</label><br>
+  <p id="err"ng-show="myForm.email.$touched && myForm.email.$invalid">Please enter a VALID EmailID  </p>
 </span>
 
 <span class="form-group has-float-label">
-  <input class="form-control" id="pno" type="tel" placeholder="Enter Phone Number "/>
-  <label for="email">Phone number</label><br>
+  <input class="form-control" id="pno" type="number" min="1000000000" max="9999999999" ng-model="pno" name="pno" placeholder="Enter Phone Number "/>
+  <label for="pno">Phone number</label><br>
+  <p id="err" ng-show="myForm.pno.$touched && myForm.pno.$invalid">Enter a valid Phone Number.</p>
 </span>
+
 <span class="form-group has-float-label">
-  <input class="form-control" id="pass" type="password" placeholder="Enter password"/>
+  <input class="form-control" id="pass" type="password" name="pass" ng-model="pass"  placeholder="Enter password" ng-blur="passlen()">
   <label for="pass">Password</label><br>
+<p  ng-model="passd" id="err">{{passd}}</p>
+<p  ng-model="passl" id="err">{{passl}}</p>
+</span>
 
-</span><span class="form-group has-float-label">
-  <input class="form-control" id="cpass" type="password" placeholder="confirm password"/>
+<span class="form-group has-float-label">
+  <input class="form-control" id="cpass" type="password" name="cpass" ng-model="cpass"placeholder="confirm password" ng-blur="checkpassword()">
   <label for="cpass">Confirm Password</label>
 </span>
 
-  <p id="form">State:<p> 
- <select  ng-model="selstates" ng-options=" x for x in states">
+
+  <p id="pk"> State  </p> 
+ <select  placeholder="states" ng-model="selstates" ng-options=" x for x in states">
 </select>
 <br>
 <br>
