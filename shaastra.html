@@ -90,6 +90,10 @@ background: radial-gradient(white,black);
   margin-top: 50px;
   margin-bottom: 70px;
 }
+.card-body
+{
+
+}
 .button5 {
     background-color: white;
     color: black;
@@ -128,6 +132,17 @@ input.form-control
 	
 	border-color: lightblue;
 }
+ .carousel-inner img {
+      width: 80%;
+      margin:90px;
+      height: 350px;
+      
+  }
+  #demo{
+
+background-color:		#D3D3D3;
+
+  }
 
 </style>
 
@@ -143,6 +158,51 @@ input.form-control
   
  
           <h1 class="display-2">Shaastra </h1>
+
+
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+    <li data-target="#demo" data-slide-to="3"></li>
+  </ul>
+  
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="download.jpg" alt="" >
+    </div>
+    <div class="carousel-item">
+      <img src="maxresdefault.jpg" alt="" >
+    </div>
+    <div class="carousel-item">
+      <img src="rc.jpg" alt="">
+    </div>
+    <div class="carousel-item">
+      <img src="sh.jpg" alt="" >
+    </div>
+  </div>
+  
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+
+
+
+
+
+
+
+
+
   
 
             <div class="card-header">      <h4 class="display-3">Create a new account</h4> 
