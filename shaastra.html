@@ -118,6 +118,12 @@ background: radial-gradient(white,black);
 
     
 }
+#req
+{
+
+	color: red;
+	size:140%;
+}
 #ll
 {
 	color: red;
@@ -210,43 +216,43 @@ background-color:		#D3D3D3;
 <div class="card-body">
 
 <form name="myForm"> 
-	
+	<div id="req"> The marked fields are required</div>
 <br>
 <span class="form-group has-float-label">
   <input class="form-control" id="fname" type="text" ng-model="myName" name="myName"placeholder="Enter firstname"required>
-  <label for="fname">First Name</label> <br>
+  <label for="fname">First Name<span id="req">*</span></label> 
   <p id="err" ng-show="myForm.myName.$touched && myForm.myName.$invalid">The name is required.</p>
 </span>
-<br>
+
 
 <span class="form-group has-float-label">
   <input class="form-control" id="lname" type="text" ng-model="lname" name="lname" placeholder="Enter Lastname"required>
-  <label for="lname">Last Name</label><br>
+  <label for="lname">Last Name<span id="req">*</span></label>
   <p id="err" ng-show="myForm.lname.$touched && myForm.lname.$invalid">The name is required.</p></span>
-<br>
+
 
   <span class="form-group has-float-label">
   <input class="form-control" id="sid" type="text" ng-model="sid" name="sid" placeholder="Enter ShaastraID" required>
-  <label for="sid">Shaastra ID</label><br>
+  <label for="sid">Shaastra ID<span id="req">*</span></label>
   <p id="err" ng-show="myForm.sid.$touched && myForm.sid.$invalid">The Shaastra ID is required.</p>
-<br>
+
 </span>
 
 <span class="form-group has-float-label">
   <input class="form-control" id="email" type="email" name="email" ng-model="email"placeholder="Enter EmailID "/>
-  <label for="email">Email</label><br>
+  <label for="email">Email</label>
   <p id="err"ng-show="myForm.email.$touched && myForm.email.$invalid">Please enter a VALID EmailID  </p>
 </span>
 
 <span class="form-group has-float-label">
   <input class="form-control" id="pno" type="number" min="1000000000" max="9999999999" ng-model="pno" name="pno" placeholder="Enter Phone Number "/>
-  <label for="pno">Phone number</label><br>
+  <label for="pno">Phone number</label>
   <p id="err" ng-show="myForm.pno.$touched && myForm.pno.$invalid">Enter a valid Phone Number.</p>
 </span>
 
 <span class="form-group has-float-label">
   <input class="form-control" id="pass" type="password" name="pass" ng-model="pass"  placeholder="Enter password" ng-blur="passlen()">
-  <label for="pass">Password</label><br>
+  <label for="pass">Password</label>
 <p  ng-model="passd" id="err">{{passd}}</p>
 <p  ng-model="passl" id="err">{{passl}}</p>
 </span>
