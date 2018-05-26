@@ -112,4 +112,8 @@ background-color:		#D3D3D3;
         font-size:40px;
 
   }
+  input.form-control
+  {
+    width: 100%;
+  }
 }
