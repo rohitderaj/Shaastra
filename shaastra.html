@@ -14,118 +14,114 @@
 
 <link rel="stylesheet" type="text/css" href="styles.css">
 
-
-
-
-
-
 </head>
 
 
 <body ng-app="myApp" ng-controller="myCtrl" >
   
 
- <div class="card" style="width: 75%; margin:auto;" >
+   <div class="card" style="width: 75%; margin:auto;" >
   
- 
-          <h1 id="xx" class="display-2">Shaastra </h1>
+        <h1 id="xx" class="display-2">Shaastra </h1>
 
 
-<div id="demo" class="carousel slide" data-ride="carousel">
+        <div id="demo" class="carousel slide" data-ride="carousel">
 
-  <!-- Indicators -->
-  <ul class="carousel-indicators">
-    <li data-target="#demo" data-slide-to="0" class="active"></li>
-    <li data-target="#demo" data-slide-to="1"></li>
-    <li data-target="#demo" data-slide-to="2"></li>
-    <li data-target="#demo" data-slide-to="3"></li>
-  </ul>
+         <!-- Indicators -->
+             <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    				<li data-target="#demo" data-slide-to="1"></li>
+    				<li data-target="#demo" data-slide-to="2"></li>
+    			    <li data-target="#demo" data-slide-to="3"></li>
+             </ul>
   
-  <!-- The slideshow -->
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="sh.jpg" alt="" width="100%" height="350vh">
-    </div>
-    <div class="carousel-item">
-      <img src="maxresdefault.jpg" alt="" width="100%" height="350vh" >
-    </div>
-    <div class="carousel-item">
-      <img src="rc.jpg" alt="" width="100%" height="350vh">
-    </div>
-    <div class="carousel-item">
-      <img src="download.jpg" alt="" width="100%" height="350vh">
-    </div>
-  </div>
+       <!-- The slideshow -->
+        <div class="carousel-inner">
+                  <div class="carousel-item active">
+                         <img src="sh.jpg" alt="" width="100%" height="350vh">
+                  </div>
+                  <div class="carousel-item">
+                         <img src="maxresdefault.jpg" alt="" width="100%" height="350vh" >
+                  </div>
+                  <div class="carousel-item">
+                         <img src="rc.jpg" alt="" width="100%" height="350vh">
+                  </div>
+                  <div class="carousel-item">
+                         <img src="download.jpg" alt="" width="100%" height="350vh">
+                  </div>
+          </div>
   
   <!-- Left and right controls -->
   <a class="carousel-control-prev" href="#demo" data-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
+     <span class="carousel-control-prev-icon"></span>
   </a>
   <a class="carousel-control-next" href="#demo" data-slide="next">
-    <span class="carousel-control-next-icon"></span>
+     <span class="carousel-control-next-icon"></span>
   </a>
 </div>
 
-            <div class="card-header">      <div id="rr" class="display-3">Create a new account</div> 
-            </div>
-<div class="card-body">
+        <div class="card-header">     
+                    <div id="rr" class="display-3">Create a new account</div> 
+        </div>
+        <div class="card-body">
 
-<form name="myForm"> 
-	<div id="req"> The marked fields are required</div>
-<br>
-<span class="form-group has-float-label">
-  <input class="form-control" id="fname" type="text" ng-model="myName" name="myName"placeholder="Enter firstname"required>
-  <label for="fname">First Name<span id="req">*</span></label> 
-  <p id="err" ng-show="myForm.myName.$touched && myForm.myName.$invalid">The name is required.</p>
-</span>
-
-
-<span class="form-group has-float-label">
-  <input class="form-control" id="lname" type="text" ng-model="lname" name="lname" placeholder="Enter Lastname"required>
-  <label for="lname">Last Name<span id="req">*</span></label>
-  <p id="err" ng-show="myForm.lname.$touched && myForm.lname.$invalid">The name is required.</p></span>
+			<form name="myForm"> 
+			<div id="req"> The marked fields are required</div>
+			                    <br>
+			<span class="form-group has-float-label">
+			<input class="form-control" id="fname" type="text" ng-model="myName" name="myName"placeholder="Enter firstname"required>
+			<label for="fname">First Name<span id="req">*</span></label> 
+			<p id="err" ng-show="myForm.myName.$touched && myForm.myName.$invalid">The name is required.</p>
+			</span>
 
 
-  <span class="form-group has-float-label">
-  <input class="form-control" id="sid" type="text" ng-model="sid" name="sid" placeholder="Enter ShaastraID" required>
-  <label for="sid">Shaastra ID<span id="req">*</span></label>
-  <p id="err" ng-show="myForm.sid.$touched && myForm.sid.$invalid">The Shaastra ID is required.</p>
-
-</span>
-
-<span class="form-group has-float-label">
-  <input class="form-control" id="email" type="email" name="email" ng-model="email"placeholder="Enter EmailID "/>
-  <label for="email">Email</label>
-  <p id="err"ng-show="myForm.email.$touched && myForm.email.$invalid">Please enter a VALID EmailID  </p>
-</span>
-
-<span class="form-group has-float-label">
-  <input class="form-control" id="pno" type="number" min="1000000000" max="9999999999" ng-model="pno" name="pno" placeholder="Enter Phone Number "/>
-  <label for="pno">Phone number</label>
-  <p id="err" ng-show="myForm.pno.$touched && myForm.pno.$invalid">Enter a valid Phone Number.</p>
-</span>
-
-<span class="form-group has-float-label">
-  <input class="form-control" id="pass" type="password" name="pass" ng-model="pass"  placeholder="Enter password" ng-blur="passlen()">
-  <label for="pass">Password</label>
-<p  ng-model="passd" id="err">{{passd}}</p>
-<p  ng-model="passl" id="err">{{passl}}</p>
-</span>
-
-<span class="form-group has-float-label">
-  <input class="form-control" id="cpass" type="password" name="cpass" ng-model="cpass"placeholder="confirm password" ng-blur="checkpassword()">
-  <label for="cpass">Confirm Password</label>
-</span>
+            <span class="form-group has-float-label">
+            <input class="form-control" id="lname" type="text" ng-model="lname" name="lname" placeholder="Enter Lastname"required>
+            <label for="lname">Last Name<span id="req">*</span></label>
+            <p id="err" ng-show="myForm.lname.$touched && myForm.lname.$invalid">The name is required.</p></span>
 
 
-  <p id="pk"> State  </p> 
- <select  placeholder="states" ng-model="selstates" ng-options=" x for x in states">
-</select>
-<br>
-<br>
+			 <span class="form-group has-float-label">
+			 <input class="form-control" id="sid" type="text" ng-model="sid" name="sid" placeholder="Enter ShaastraID" required>
+			<label for="sid">Shaastra ID<span id="req">*</span></label>
+			<p id="err" ng-show="myForm.sid.$touched && myForm.sid.$invalid">The Shaastra ID is required.</p></span>
+
+			
+
+			<span class="form-group has-float-label">
+			  <input class="form-control" id="email" type="email" name="email" ng-model="email"placeholder="Enter EmailID "/>
+			  <label for="email">Email</label>
+			  <p id="err"ng-show="myForm.email.$touched && myForm.email.$invalid">Please enter a VALID EmailID  </p>
+			</span>
+
+			<span class="form-group has-float-label">
+			  <input class="form-control" id="pno" type="number" min="1000000000" max="9999999999" ng-model="pno" name="pno" placeholder="Enter Phone Number "/>
+			  <label for="pno">Phone number</label>
+			  <p id="err" ng-show="myForm.pno.$touched && myForm.pno.$invalid">Enter a valid Phone Number.</p>
+			</span>
+
+			<span class="form-group has-float-label">
+			  <input class="form-control" id="pass" type="password" name="pass" ng-model="pass"  placeholder="Enter password" ng-blur="passlen()">
+			  <label for="pass">Password</label>
+			<p  ng-model="passd" id="err">{{passd}}</p>
+			<p  ng-model="passl" id="err">{{passl}}</p>
+			</span>
+
+			<span class="form-group has-float-label">
+			  <input class="form-control" id="cpass" type="password" name="cpass" ng-model="cpass"placeholder="confirm password" ng-blur="checkpassword()">
+			  <label for="cpass">Confirm Password</label>
+			</span>
+
+
+			  <p id="pk"> State  </p> 
+			 <select  placeholder="states" ng-model="selstates" ng-options=" x for x in states">
+			</select>
+			<br>
+			<br>
 
 <button  ng-disabled="myForm.myName.$invalid || myForm.lname.$invalid||  myForm.sid.$invalid || myForm.email.$invalid|| myForm.pno.$invalid || x==1||y==1 " class="button button5" >Create account</button>
 </form>
+
 </div> <!--card body end -->
 </div> <!-- card end-->
 </body>
