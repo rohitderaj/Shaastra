@@ -27,32 +27,33 @@ background: radial-gradient(white,black);
     text-overflow:ellipsis;
 }
 
-}
 
 
-.button5 {
-    background-color: white;
+
+.button5{
+    background-color: lightblue;
     color: black;
-    border: 1vw; solid #555555;
-    width: 20vw;
-    transform: translate(100%,0);
+    border-color: solid #555555;
+    border: 1vw; 
+    width: 19vw;
+    transform: translate(125%,0);
 }
 
 .button5:hover {
     background-color: lightblue;
     color: white;
-    width: 20vw;
-    transform: translate(100%,0);
+    width: 19vw;
+    transform: translate(125%,0);
      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
  }
 .button5:disabled{
       
       color: white;   
       background-color:red;
-      opacity: 0.2;
+      opacity: 0.4;
       cursor: not-allowed;  
-width: 20vw;
-transform: translate(100%,0);
+      width: 19vw;
+     transform: translate(125%,0);
     
 }
 #req
